@@ -1,16 +1,16 @@
 Date: 13 Aug 21
-start Time: 13:00
-end Time: 13:50
+Start Time: 13:00
+End Time: 13:50
 Attendees (all)
 
 Outcomes
 ========
 
-introduced ourselves
+Introduced ourselves
 Decided on roles
 Choose roles
 Reviewed Assignment
 Created Git hub repo and accounts 
 Considered project choice
 
-Kaleb nominated to  be presenter and prepare slides and create project choice doc.
+Kaleb nominated to be presenter and prepare slides and create project choice doc.
