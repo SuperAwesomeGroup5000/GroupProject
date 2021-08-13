@@ -4,7 +4,7 @@ I.T. Project Management Group Assignment
 Initial Group Meeting 
 
 Dated: 13 Aug 2021
-venue: discord channel
+Venue: Discord channel
 Author: Carl Durkin
 
 Background
@@ -20,7 +20,7 @@ actual list of roles and tasks.
 Project Initiation
 ==========
 Choose: To which IT software system to develop 
-      i.e. manage: bookings, loyalty program, or airline’s  lounges
+      i.e. manage: bookings, loyalty program, or airline’s lounges
 Provide rational of choice
 Define Choose/assign roles
 gather all of group Member details (email, discord, full name and student ids)
@@ -42,7 +42,7 @@ Possible Roles:
 Programming
 ===========
 Programming: Create User interface for the product prototype
-Programming: Implement key functionalities in prototype     
+Programming: Implement key functionalities in prototype
 
 Practical Tasks
 ===============
