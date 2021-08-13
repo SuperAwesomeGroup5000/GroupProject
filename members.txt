@@ -1,12 +1,12 @@
 Kaleb - 08/03/2021
 Name: Kaleb Dodds-Pratt
 Email: kcdp942@uowmail.edu.au
-Role:
+Role: Presenter
 
 Hallam — 08/03/2021
 Name: Hallam Roberts
 Email: hrr052@uowmail.edu.au
-Role:
+Role: Analyst
 
 Sam — 08/03/2021
 Name: Samuel Murrandah
@@ -16,7 +16,7 @@ Role: Programmer
 Danny — 08/03/2021
 Name: Daniel Dimatulac
 Email: dd985@uowmail.edu.au
-Role:
+Role:Analyst
 
 Carl — 08/03/2021
 Name: Carl Durkin
@@ -26,4 +26,4 @@ Role: Coordinator
 Bran — 08/03/2021
 Name: Brandon Teh 
 Email: bzyt637@uowmail.edu.au
-Role:
+Role: Analyst
