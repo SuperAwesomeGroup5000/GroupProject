@@ -13,4 +13,4 @@ This repository contains the prototype and documents for our group project.
 
 ## Project Choice
 Our group chose project 2:
-> Develop an IT software system to manage loyalty programs (e.g., frequent flyer points and rewards including a wide range of ways to earn points, use points, status upgrade, etc.).
+> Develop an IT software system to manage loyalty programs (e.g. frequent flyer points and rewards including a wide range of ways to earn points, use points, status upgrade, etc).
