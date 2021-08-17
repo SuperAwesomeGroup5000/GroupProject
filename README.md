@@ -1,5 +1,5 @@
-# [CSIT214 Group Project](https://superawesomegroup5000.github.io/GroupProject/)
-This repository contains code and documents for our group project.
+# [CSIT214 Project: Group 2](https://superawesomegroup5000.github.io/GroupProject/)
+This repository contains the code and documents for our group project.
 
 ## Group Members
 |Student|Email|Role|
