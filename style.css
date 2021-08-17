@@ -1,4 +1,4 @@
 /* Nicer font */
-html, body {
+* {
 	font-family: system-ui, Arial, Helvetica, sans-serif;
 }
