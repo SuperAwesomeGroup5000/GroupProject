@@ -1,17 +1,15 @@
 # [CSIT214 Group Project](https://superawesomegroup5000.github.io/GroupProject/)
 This repository contains code and documents for our group project.
 
-## Our Group
-We are group 2, consisting of the following members:
-
-|Student|Role|
-|:---|:---|
-|Kaleb Dodds-Pratt|Presenter/Analyst|
-|Hallam Roberts|Analyst|
-|Samuel Murrandah|Programmer|
-|Daniel Dimatulac|Analyst|
-|Carl Durkin|Coordinator|
-|Brandon Teh|Analyst|
+## Group Members
+|Student|Email|Role|
+|:---|:--|:---|
+|Kaleb Dodds-Pratt|kcdp942@uowmail.edu.au|Presenter/Analyst|
+|Hallam Roberts|hrr052@uowmail.edu.au|Analyst|
+|Samuel Murrandah|sjrm898@uowmail.edu.au|Programmer|
+|Daniel Dimatulac|dd985@uowmail.edu.au|Analyst|
+|Carl Durkin|crd017@uowmail.edu.au|Coordinator|
+|Brandon Teh|bzyt637@uowmail.edu.au|Analyst|
 
 ## Project Choice
 Our group chose project 2:
