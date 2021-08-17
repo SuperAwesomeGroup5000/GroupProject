@@ -1,3 +1,4 @@
+/* Nicer font */
 html, body {
-	font-family: "Comic Sans MS", "Chalkboard", cursive, sans-serif;
+	font-family: system-ui, Arial, Helvetica, sans-serif;
 }
