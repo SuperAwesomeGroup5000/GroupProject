@@ -3,8 +3,8 @@ I.T. Project Management Group Assignment
 
 Initial Group Meeting 
 
-Dated: 13 Aug 2021
-Venue: Discord channel
+Date: 13 Aug 2021
+Venue: Discord
 Author: Carl Durkin
 Group 2
 
@@ -19,7 +19,7 @@ group assignment specifications and should be taken as starting point not a
 actual list of roles and tasks.
 
 Project Initiation
-==========
+==================
 Choose: To which IT software system to develop 
       i.e. manage: bookings, loyalty program, or airline’s lounges
 Provide rational of choice
@@ -32,7 +32,7 @@ Group registration is due today!
 Can someone please confirm it has been done.
 
 Possible Roles:
-==============
+==================
 1. Group Coordinator (including submitting assignment)
 2. Programmer
 3. Task Manager (JIRA and Ms Project)
@@ -41,12 +41,12 @@ Possible Roles:
 6. Business Analyst #2(analysis and feasibility etc)
 
 Programming
-===========
+==================
 Programming: Create User interface for the product prototype
 Programming: Implement key functionalities in prototype
 
 Practical Tasks
-===============
+==================
 Set up JIRA account (task tracking)
 Set up GitHub repository (file sharing)
 create a Microsoft Project to track your project progress
@@ -56,7 +56,7 @@ Work  breakdown  structure  (WBS),
 Ms Project: outputs  for  project schedule, cost management and human resource allocation.
 
 Reports
-=======
+==================
 Screenshots & description of prototype
 snapshots of JIRA weekly product backlog
 Evidence for the appropriate use of version control software (e.g., GitHub)
@@ -66,7 +66,7 @@ Evidence for the appropriate use of version control software (e.g., GitHub)
 Member contribution report
 
 Document
-=========
+==================
 Justification of selected  project  
 summary  of  the  case  and  situation  
 analysis  of  existing  business, 
@@ -79,4 +79,3 @@ Risk management including risk identification, assessment, and mitigation.
 Effort/cost  estimation  (function  points and/or COCOMO).
 Compile Final Report
 Project  closing  and  Lessons-learnt
-
