@@ -1,5 +1,5 @@
 Group Meeting
-
+=============
 Date: 20  Aug 2021
 Started: 13:00 
 Finisghed: 
@@ -11,4 +11,10 @@ Sam
 kaleb
 Bran
 
+Absent
+=======
+Hallam
+Daniel
+
 Items Discussed/outcomes
+========================
