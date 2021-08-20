@@ -6,19 +6,32 @@ Finished: 13:45
 
 Attendees:
 =========
-Carl
-Sam
-kaleb
-Bran
-Hallam
+- Carl (recovering from head cold)
+- Sam
+- kaleb
+- Bran
+- Hallam
+- Daniel (late recovering from covid vaccination)
 
-Absent
-=======
-Daniel (recovering from covid vaccination)
+Items Discussed
+========================- 
+- tasks for each section of the final reported create/moved into required Jira sprints.
+- group members requested to volunteer for tasks bey assigning the desired task to themselves
+- Most tasks assigned
+- Discussed Git Hub (folder structure, readme.md etc)
 
-Items Discussed/outcomes
-========================
-tasks for each section of the final reported create/moved into required Jira sprints.
-group members requested to volunteer for tasks bey assigning the desired task to themselves
-Most tasks assigned
-Discussed Git Hub (folder structure, readme.md etc)
+Outcomes
+====================
+- Appropriately re-ordered sprint log
+- Next weeks jobs assigned
+
+
+Jobs Completed Last Week
+===================
+- Project Justification
+
+Jobs for This Week
+===================
+- Business Case
+- Project Charter
+- Project Scope Statement
