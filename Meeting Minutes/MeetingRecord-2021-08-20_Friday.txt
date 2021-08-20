@@ -10,14 +10,14 @@ Carl
 Sam
 kaleb
 Bran
+Hallam
 
 Absent
 =======
-Hallam
 Daniel
 
 Items Discussed/outcomes
 ========================
 tasks for each section of the final reported create/moved into required Jira sprints.
 group members requested to volunteer for tasks bey assigning the desired task to themselves
-
+Discussed Git Hub (folder structure, readme.md etc)
