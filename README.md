@@ -4,7 +4,7 @@ This repository contains the prototype and documents for our group project.
 ## Group Members
 |Student|Email|Role|
 |:---|:--|:---|
-|Kaleb Dodds-Pratt|kcdp942@uowmail.edu.au|Presenter/Analyst|
+|Kaleb Dodds-Pratt|kcdp942@uowmail.edu.au|Presenter / Analyst|
 |Hallam Roberts|hrr052@uowmail.edu.au|Analyst|
 |Samuel Murrandah|sjrm898@uowmail.edu.au|Programmer|
 |Daniel Dimatulac|dd985@uowmail.edu.au|Analyst|
