@@ -10,13 +10,21 @@
 			margin: 0;
 		}
 
+		div {
+			display: flex;
+			justify-content: center;
+		}
+
 		img {
 			display: block;
 			width: 100%;
+			max-width: 1024px;
 		}
 		</style>
 	</head>
 	<body>
-		<img src="desktop.svg" onerror="this.src='desktop.png';">
+		<div>
+			<img src="desktop.svg" onerror="this.src='desktop.png';">
+		</div>
 	</body>
 </html>
