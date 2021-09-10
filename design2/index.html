@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>FlyDreamAir Loyalty Program</title>
+		<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+		<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Lobster">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<style>
+		:root {
+			--active-category: #0086e6;
+			--add-color: #0086e6;
+			--add-color-hover: #0095ff;
+			--add-color-active: #0068b3;
+			--add-color-disabled: #737373;
+			--header-color: #0077cc;
+			--progress-color: #00b000;
+			--shadow-color: #00000030;
+		}
+
+		html, body {
+			font-family: system-ui, Arial, Helvetica, sans-serif;
+			margin: 0;
+		}
+
+		#topnav {
+			background-color: var(--header-color);
+			display: flex;
+			align-items: center;
+			overflow: hidden;
+		}
+
+		#topnav i, #topnav span {
+			color: white;
+			float: left;
+			padding: 12px;
+		}
+
+		#topnav span {
+			font-family: "Lobster";
+			font-size: 1.7em;
+		}
+
+		#topnav i {
+			font-size: 2.5em;
+		}
+
+		#topnav .right {
+			margin-left: auto;
+		}
+
+		#topnav #cart {
+			float: right;
+			cursor: pointer;
+		}
+
+		#content {
+			padding-left: 64px;
+		}
+
+		#welcome {
+			font-size: 1.4em;
+		}
+
+		#products {
+			display: flex;
+			flex-wrap: wrap;
+			clear: right;
+		}
+
+		#welcomediv {
+			display: flex;
+			margin: 32px 0 16px 0;
+		}
+
+		#welcomediv img {
+			width: 96px;
+			height: 96px;
+			margin-right: 16px;
+		}
+
+		#welcomediv #infodiv {
+			display: flex;
+			flex-direction: column;
+			justify-content: space-between;
+		}
+
+		#welcomediv #infodiv p {
+			margin: 0;
+		}
+
+		#welcomediv .progress {
+			height: 20px;
+			width: 320px;
+			margin-left: 16px;
+			background-color: lightgray;
+		}
+
+		#welcomediv .bar {
+			height: 100%;
+			width: 75%;
+			background-color: var(--progress-color);
+		}
+
+		#welcomediv .progressbar {
+			display: flex;
+			align-items: center;
+		}
+
+		.product {
+			border-radius: 8px;
+			border: 1px solid lightgray;
+			box-shadow: 2px 2px 4px var(--shadow-color);
+			display: inline-flex;
+			flex-direction: column;
+			margin: 0 16px 16px 0;
+			padding: 16px;
+			position: relative;
+		}
+
+		.product .locked {
+			align-items: center;
+			background-color: #00000080;
+			border-radius: 8px;
+			color: white;
+			display: flex;
+			flex-direction: column;
+			font-size: x-large;
+			font-weight: bold;
+			height: 100%;
+			justify-content: center;
+			left: 0;
+			position: absolute;
+			text-align: center;
+			top: 0;
+			width: 100%;
+		}
+
+		.product .locked i {
+			font-size: 3em;
+		}
+
+		.product .title {
+			text-align: center;
+			font-size: large;
+			font-weight: bold;
+		}
+
+		.product .image {
+			align-items: center;
+			align-self: center;
+			display: flex;
+			flex: auto;
+			padding: 8px;
+		}
+
+		.product .image img {
+			height: 160px;
+		}
+
+		.product .points {
+			text-align: center;
+		}
+
+		.product .quantity, .product .add {
+			margin-top: 8px;
+		}
+
+		.product .quantity {
+			display: flex;
+			align-items: center;
+		}
+
+		.product .quantity input {
+			flex: auto;
+			margin-left: 8px;
+			padding: 4px;
+			width: 0;
+		}
+
+		.product .add {
+			align-items: center;
+			background-color: var(--add-color);
+			border-radius: 4px;
+			border: none;
+			color: white;
+			cursor: pointer;
+			display: inline-flex;
+			font-size: 1em;
+			justify-content: space-between;
+			padding: 8px 16px;
+		}
+
+		.product .add:disabled {
+			background-color: var(--add-color-disabled);
+		}
+
+		.product .add:hover {
+			background-color: var(--add-color-hover);
+		}
+
+		.product .add:active {
+			background-color: var(--add-color-active);
+		}
+
+		#categorydiv {
+			display: inline-block;
+			float: left;
+			width: 160px;
+		}
+
+		#categorydiv ul {
+			list-style-type: none;
+			padding: 0;
+		}
+
+		#categorydiv span {
+			font-weight: bold;
+		}
+
+		#categorydiv li {
+			border-radius: 4px 0 0 4px;
+			cursor: pointer;
+			padding: 8px 16px;
+		}
+
+		#categorydiv li:hover {
+			background-color: lightgray;
+		}
+
+		#categorydiv li.active {
+			background-color: var(--active-category);
+			color: white;
+			font-weight: bold;
+		}
+
+		#orderbydiv label {
+			font-weight: bold;
+		}
+
+		#orderbydiv {
+			display: inline-block;
+			float: right;
+			margin-right: 32px;
+		}
+
+		#orderbydiv select {
+			padding: 4px 8px;
+			width: 10em;
+			font-size: 1em;
+		}
+
+		.dropdown {
+			display: inline-block;
+			float: right;
+			position: relative;
+		}
+
+		.dropdowncontent {
+			background-color: white;
+			display: none;
+			position: absolute;
+			right: 0;
+			z-index: 1;
+			overflow: auto;
+			min-width: 160px;
+			box-shadow: 0px 8px 16px 0px var(--shadow-color)
+		}
+		</style>
+		<script>
+		var currentCategory = "all";
+		var currentOrder = "price";
+		var currentLevel = 3;
+
+		var products = [
+			{
+				name: "Plane Figurine",
+				image: "plane.png",
+				price: 100,
+				dollars: false,
+				requiredLevel: 0,
+				category: ["product"]
+			},
+			{
+				name: "19 Dollar Fortnite Card",
+				image: "fortnite.jpg",
+				price: 190,
+				dollars: false,
+				requiredLevel: 0,
+				category: ["product"]
+			},
+			{
+				name: "FlyDreamAir Hoodie",
+				image: "merch.png",
+				price: 200,
+				dollars: false,
+				requiredLevel: 0,
+				category: ["product"]
+			},
+			{
+				name: "Pilot Figurine",
+				image: "bobblehead.png",
+				price: 250,
+				dollars: false,
+				requiredLevel: 0,
+				category: ["product"]
+			},
+			{
+				name: "Personal Assistant",
+				image: "hostess.jpg",
+				price: 750,
+				dollars: false,
+				requiredLevel: 1,
+				category: ["service"]
+			},
+			{
+				name: "FlyDreamAir Lounge Pass",
+				image: "bar.jpg",
+				price: 1000,
+				dollars: false,
+				requiredLevel: 2,
+				category: ["service"]
+			},
+			{
+				name: "FlyDreamAir Buffet Pass",
+				image: "buffet.jpg",
+				price: 1500,
+				dollars: false,
+				requiredLevel: 3,
+				category: ["service"]
+			},
+			{
+				name: "First Class Pass",
+				image: "firstclass.jpg",
+				price: 2000,
+				dollars: false,
+				requiredLevel: 4,
+				category: ["service"]
+			},
+			{
+				name: "Fly the Plane Pass",
+				image: "pilot.jpg",
+				price: 3000,
+				dollars: false,
+				requiredLevel: 5,
+				category: ["service"]
+			},
+			{
+				name: "Detonate the Plane Pass",
+				image: "detonate.jpg",
+				price: 5000,
+				dollars: false,
+				requiredLevel: 6,
+				category: ["service"]
+			},
+			{
+				name: "Level Upgrade",
+				image: "levelup.png",
+				price: 10,
+				dollars: true,
+				requiredLevel: 3,
+				category: ["points"]
+			},
+			{
+				name: "1000 Dream Points",
+				image: "1000points.jpg",
+				price: 20,
+				dollars: true,
+				requiredLevel: 0,
+				category: ["points"]
+			},
+			{
+				name: "2000 Dream Points",
+				image: "2000points.jpg",
+				price: 35,
+				dollars: true,
+				requiredLevel: 1,
+				category: ["points"]
+			},
+			{
+				name: "5000 Dream Points",
+				image: "5000points.jpg",
+				price: 75,
+				dollars: true,
+				requiredLevel: 2,
+				category: ["points"]
+			},
+			{
+				name: "10000 Dream Points",
+				image: "10000points.jpeg",
+				price: 125,
+				dollars: true,
+				requiredLevel: 3,
+				category: ["points"]
+			}
+		];
+
+		function loadProducts(category, order) {
+			var containerContents = "";
+			if (order === "name") {
+				products.sort(function(a, b) {
+					var nameA = a.name.toLowerCase()
+					var nameB = b.name.toLowerCase();
+					if (nameA < nameB) return -1;
+					if (nameA > nameB) return 1;
+					return 0;
+				});
+			} else if (order === "price") {
+				products.sort(function(a, b) {
+					var priceA = a.price + a.dollars * 10000;
+					var priceB = b.price + b.dollars * 10000;
+					return priceA - priceB;
+				});
+			}
+			for (var i = 0; i < products.length; i++) {
+				if (category === "all" || products[i].category.indexOf(category) !== -1) {
+					var disabled = currentLevel < products[i].requiredLevel;
+					containerContents += `
+					<div class="product">
+						<div class="title">${products[i].name}</div>
+						<div class="image">
+							<img src="${products[i].image}" ${disabled ? "style=\"filter: grayscale(100%);\"" : ""}>
+						</div>
+						<div class="points">${products[i].dollars ? "$" + products[i].price : products[i].price + " points"}</div>
+						<div class="quantity">
+							<label>Quantity</label>
+							<input type="number" value="1">
+						</div>
+						<button class="add" onmousedown="buy(${i});" ${disabled ? "disabled" : ""}>Add to cart<i class="material-icons">add_shopping_cart</i></button>`;
+					if (disabled) {
+						containerContents += `<div class="locked"><i class="material-icons">lock</i>Locked until level ${products[i].requiredLevel}</div>`;
+					}
+					containerContents += "</div>";
+				}
+			}
+			document.getElementById("products").innerHTML = containerContents;
+			document.addEventListener("click", hideDropdown);
+		}
+
+		function updateCategory(elem) {
+			var current = document.getElementsByClassName("active");
+			current[0].classList.remove("active");
+			elem.classList.add("active");
+			currentCategory = elem.getAttribute("value");
+			loadProducts(currentCategory, currentOrder);
+		}
+
+		function updateOrdering(elem) {
+			currentOrder = elem.value;
+			loadProducts(currentCategory, currentOrder);
+		}
+
+		function buy(id) {
+			//var product = products[id];
+			//alert(product.name);
+			currentLevel++;
+			loadProducts(currentCategory, currentOrder);
+		}
+
+		function showDropdown() {
+			console.log("SHOWING");
+			document.getElementById("cartdropdown").style.display = "block";
+		}
+
+		function hideDropdown(e) {
+			if (e.target.id !== "cart") {
+				document.getElementById("cartdropdown").style.display = "none";
+			}
+		}
+		</script>
+	</head>
+	<body onload="loadProducts(currentCategory, currentOrder);">
+		<div id="topnav">
+			<i class="material-icons">airplanemode_active</i>
+			<span>FlyDreamAir Loyalty Program</span>
+			<div class="right">
+				<i id="account" class="material-icons">account_circle</i>
+				<div class="dropdown">
+					<i id="cart" class="material-icons" onmousedown="showDropdown();">shopping_cart</i>
+					<div id="cartdropdown" class="dropdowncontent">
+						<p>Hello</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div id="content">
+			<div id="welcomediv">
+				<img src="icon.png">
+				<div id="infodiv">
+					<p id="welcome">Welcome, Partha!</p>
+					<p id="pointcount">You have 1503 Dream Points.</p>
+					<div class="progressbar">
+						<span>Level 3</span>
+						<div class="progress">
+							<div class="bar"></div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div id="categorydiv">
+				<span>Category</span>
+				<ul>
+					<li class="active" value="all" onmousedown="updateCategory(this);">All</li>
+					<li value="product" onmousedown="updateCategory(this);">Products</li>
+					<li value="service" onmousedown="updateCategory(this);">Services</li>
+					<li value="points" onmousedown="updateCategory(this);">Points</li>
+				</ul>
+			</div>
+			<div id="orderbydiv">
+				<label for="orderby">Order by</label>
+				<select id="orderby" onchange="updateOrdering(this);">
+					<option value="name">Name</option>
+					<option selected value="price">Price</option>
+				</select>
+			</div>
+			<div id="products"></div>
+		</div>
+	</body>
+</html>
