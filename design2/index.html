@@ -55,7 +55,7 @@
 		}
 
 		#content {
-			padding-left: 64px;
+			padding: 32px 0 0 64px;
 		}
 
 		#welcome {
@@ -70,7 +70,6 @@
 
 		#welcomediv {
 			display: flex;
-			margin: 32px 0 16px 0;
 		}
 
 		#welcomediv img {
@@ -206,6 +205,7 @@
 		#categorydiv {
 			display: inline-block;
 			float: left;
+			margin-top: 16px;
 			width: 160px;
 		}
 
@@ -241,7 +241,7 @@
 		#orderbydiv {
 			display: inline-block;
 			float: right;
-			margin-right: 32px;
+			margin: 0 16px 8px 0;
 		}
 
 		#orderbydiv select {
@@ -277,7 +277,6 @@
 				name: "Plane Figurine",
 				image: "plane.png",
 				price: 100,
-				dollars: false,
 				requiredLevel: 0,
 				category: ["product"]
 			},
@@ -285,7 +284,6 @@
 				name: "19 Dollar Fortnite Card",
 				image: "fortnite.jpg",
 				price: 190,
-				dollars: false,
 				requiredLevel: 0,
 				category: ["product"]
 			},
@@ -293,7 +291,6 @@
 				name: "FlyDreamAir Hoodie",
 				image: "merch.png",
 				price: 200,
-				dollars: false,
 				requiredLevel: 0,
 				category: ["product"]
 			},
@@ -301,7 +298,6 @@
 				name: "Pilot Figurine",
 				image: "bobblehead.png",
 				price: 250,
-				dollars: false,
 				requiredLevel: 0,
 				category: ["product"]
 			},
@@ -309,7 +305,6 @@
 				name: "Personal Assistant",
 				image: "hostess.jpg",
 				price: 750,
-				dollars: false,
 				requiredLevel: 1,
 				category: ["service"]
 			},
@@ -317,81 +312,36 @@
 				name: "FlyDreamAir Lounge Pass",
 				image: "bar.jpg",
 				price: 1000,
-				dollars: false,
 				requiredLevel: 2,
 				category: ["service"]
 			},
 			{
 				name: "FlyDreamAir Buffet Pass",
 				image: "buffet.jpg",
-				price: 1500,
-				dollars: false,
+				price: 1200,
 				requiredLevel: 3,
 				category: ["service"]
+			},
+			{
+				name: "Flight Voucher",
+				image: "voucher.png",
+				price: 1500,
+				requiredLevel: 4,
+				category: ["product"]
 			},
 			{
 				name: "First Class Pass",
 				image: "firstclass.jpg",
 				price: 2000,
-				dollars: false,
-				requiredLevel: 4,
+				requiredLevel: 5,
 				category: ["service"]
 			},
 			{
 				name: "Fly the Plane Pass",
 				image: "pilot.jpg",
 				price: 3000,
-				dollars: false,
-				requiredLevel: 5,
-				category: ["service"]
-			},
-			{
-				name: "Detonate the Plane Pass",
-				image: "detonate.jpg",
-				price: 5000,
-				dollars: false,
 				requiredLevel: 6,
 				category: ["service"]
-			},
-			{
-				name: "Level Upgrade",
-				image: "levelup.png",
-				price: 10,
-				dollars: true,
-				requiredLevel: 3,
-				category: ["points"]
-			},
-			{
-				name: "1000 Dream Points",
-				image: "1000points.jpg",
-				price: 20,
-				dollars: true,
-				requiredLevel: 0,
-				category: ["points"]
-			},
-			{
-				name: "2000 Dream Points",
-				image: "2000points.jpg",
-				price: 35,
-				dollars: true,
-				requiredLevel: 1,
-				category: ["points"]
-			},
-			{
-				name: "5000 Dream Points",
-				image: "5000points.jpg",
-				price: 75,
-				dollars: true,
-				requiredLevel: 2,
-				category: ["points"]
-			},
-			{
-				name: "10000 Dream Points",
-				image: "10000points.jpeg",
-				price: 125,
-				dollars: true,
-				requiredLevel: 3,
-				category: ["points"]
 			}
 		];
 
@@ -407,9 +357,7 @@
 				});
 			} else if (order === "price") {
 				products.sort(function(a, b) {
-					var priceA = a.price + a.dollars * 10000;
-					var priceB = b.price + b.dollars * 10000;
-					return priceA - priceB;
+					return a.price - b.price;
 				});
 			}
 			for (var i = 0; i < products.length; i++) {
@@ -421,7 +369,7 @@
 						<div class="image">
 							<img src="${products[i].image}" ${disabled ? "style=\"filter: grayscale(100%);\"" : ""}>
 						</div>
-						<div class="points">${products[i].dollars ? "$" + products[i].price : products[i].price + " points"}</div>
+						<div class="points">${products[i].price} points</div>
 						<div class="quantity">
 							<label>Quantity</label>
 							<input type="number" value="1">
@@ -472,7 +420,7 @@
 	<body onload="loadProducts(currentCategory, currentOrder);">
 		<div id="topnav">
 			<i class="material-icons">airplanemode_active</i>
-			<span>FlyDreamAir Loyalty Program</span>
+			<span>FlyDreamAir Dreamers Program</span>
 			<div class="right">
 				<i id="account" class="material-icons">account_circle</i>
 				<div class="dropdown">
@@ -503,7 +451,6 @@
 					<li class="active" value="all" onmousedown="updateCategory(this);">All</li>
 					<li value="product" onmousedown="updateCategory(this);">Products</li>
 					<li value="service" onmousedown="updateCategory(this);">Services</li>
-					<li value="points" onmousedown="updateCategory(this);">Points</li>
 				</ul>
 			</div>
 			<div id="orderbydiv">
