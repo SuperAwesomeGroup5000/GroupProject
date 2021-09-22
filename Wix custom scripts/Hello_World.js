@@ -6,6 +6,7 @@ import wixData from 'wix-data';
 
 import {getUserName} from 'backend/getUser.jsw'
 import {getUser} from 'backend/getUser.jsw'
+import {getUserPoints} from 'backend/getUser.jsw'
 
 $w.onReady(async function () {
 	
@@ -30,9 +31,13 @@ async function UpdatePage(){ //needs to be an async function to work with databa
    let currentUser = wixUsers.currentUser;
    let id = currentUser.id;
 
-   let x = await getUserName(id);
-   $w('#testMessage').text = x.toString();
-   console.log("C - " + x.toString());
-   return x.toString();
+   let name = await getUserName(id);
+   let points = await getUserPoints("1d6b48d9-da45-4900-92ea-67ccff9a5dfa");
+   
+   $w('#testMessage').text = name.toString();
+
+   $w('#testPoints').text = points.toString();
+
+   console.log("C - " + points);
 
 }
