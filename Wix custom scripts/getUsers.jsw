@@ -1,4 +1,5 @@
 import wixUsersBackend from 'wix-users-backend';
+import wixData from 'wix-data';
 
 export async function getUser(id) {
   return wixUsersBackend.getUser(id)
@@ -6,7 +7,6 @@ export async function getUser(id) {
       return JSON.stringify(user);
     });
 }
-
 
 
 export async function getUserName(id) {
@@ -25,3 +25,47 @@ export async function getUserName(id) {
 
 
 }
+
+export async function getUserPoints(id) {
+
+  return wixData.query("userPoints")
+  .eq("title",id)
+  .find()
+  .then( (result) => {
+    console.log(result.items[0].points);
+    return result.items[0].points;
+  } );
+}
+
+/*
+
+export async function getUserPoints(id) {
+
+  wixData.query("userPoints")
+  .eq("title",id)
+  .count()
+  .then( (num) => {
+    //console.log(num);
+    if (num != 1){
+      let insertValue = {"title" : id,
+                          "points" : 0}
+
+        wixData.insert("userPoints", insertValue)
+
+        return num;
+    }else{
+      return wixData.query("userPoints")
+      .eq("title",id)
+      .find()
+      .then( (result) => {
+        //console.log(result.items[0].points);
+       return (result.items[0].points);
+      } );
+       }
+  } );
+
+  
+}
+
+*/
+
