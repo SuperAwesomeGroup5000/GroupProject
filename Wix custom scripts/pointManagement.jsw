@@ -1,0 +1,63 @@
+// .jsw files enable you to write functions that run on the server side
+
+// Test any backend function by clicking the "Play" button on the left side of the code panel
+
+// About testing backend functions: https://support.wix.com/en/article/velo-testing-your-backend-functions
+import wixUsersBackend from 'wix-users-backend';
+import wixData from 'wix-data';
+// Sample function
+
+export async function spendPoints(id, points) {
+
+	return wixData.query("userPoints") //get the current user
+	.eq("title", id)
+	.find()
+	.then((result) => {
+
+		// Change existing user
+		if (result.items.length > 0) {
+			
+			let currentUser = result.items[0]; // Store the current user's data
+			currentUser.points -= points; // Subtract points from the user's data
+
+			if (currentUser.points < 0) {
+				console.log(`${id} does not have sufficient funds to complete the purchase!`);
+				return false;
+			}
+
+			// Push update on user's points data
+			wixData.update("userPoints", currentUser).then((result) => {
+				console.log(result);
+			}).catch((err) => {
+				console.log(err);
+			});
+
+			return true;
+
+		// Insert new user
+		} else {
+
+			wixData.insert("userPoints", {
+				"title": id.toString(),
+				"points": 0
+			});
+
+			console.log(`Added user ${id} to points database.`);
+			
+			if (points <= 0) {
+				// This item is free, so the user can purchase it
+				return true;
+			} else {
+				console.log(`${id} does not have sufficient funds to complete the purchase!`);
+				return false;
+			}
+		}
+
+	//console.log(currentUser);
+
+	}).catch((err2) => {
+		console.log(err2);
+	});
+
+   //console.log("C");
+}
