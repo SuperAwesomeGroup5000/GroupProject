@@ -1,0 +1,54 @@
+// Filename: backend/pointManagement.jsw
+
+import wixData from 'wix-data';
+
+export async function spendPoints(id, points) {
+
+	return wixData.query("userPoints") // Get the current user
+	.eq("title", id)
+	.find()
+	.then((result) => {
+
+		// Change existing user
+		if (result.items.length > 0) {
+			
+			let currentUser = result.items[0]; // Store the current user's data
+			currentUser.points -= points; // Subtract points from the user's data
+
+			if (currentUser.points < 0) {
+				console.log(`${id} does not have sufficient funds to complete the purchase!`);
+				return false;
+			}
+
+			// Push update on user's points data
+			wixData.update("userPoints", currentUser).then((result) => {
+				console.log(result);
+			}).catch((err) => {
+				console.log(err);
+			});
+			
+			return true;
+
+		} else {
+
+			// Insert new user
+			wixData.insert("userPoints", {
+				"title": id.toString(),
+				"points": 0
+			});
+
+			console.log(`Added user ${id} to points database.`);
+			
+			if (points <= 0) {
+				// This item is free, so the user can purchase it
+				return true;
+			} else {
+				console.log(`${id} does not have sufficient funds to complete the purchase!`);
+				return false;
+			}
+		}
+		
+	}).catch((err2) => {
+		console.log(err2);
+	});
+}
