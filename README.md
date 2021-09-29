@@ -1,7 +1,7 @@
 # CSIT214 Project: Group 2
 This repository contains the prototype and documents for our group project.
 
-[Our website can be accessed here](https://superawesomegroup5000.github.io/GroupProject/).
+[Our website can be accessed here.](https://superawesomegroup5000.github.io/GroupProject/)
 
 ## Group Members
 |Student|Email|Role|
