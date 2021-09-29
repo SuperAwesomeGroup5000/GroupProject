@@ -45,7 +45,7 @@ function setupPage(user) {
 		let name, points;
 		getUserPoints().then((p) => {
 			points = p;
-			if (name && points) {
+			if (name !== undefined && points !== undefined) {
 				$w("#text19").text = `${name}, you have ${points} Dream Points.`;
 			} else {
 				$w("#text19").text = `You have ${points} Dream Points.`;
@@ -53,7 +53,7 @@ function setupPage(user) {
 		})
 		getUserName().then((n) => {
 			name = n;
-			if (name && points) {
+			if (name !== undefined && points !== undefined) {
 				$w("#text19").text = `${name}, you have ${points} Dream Points.`;
 			} else {
 				$w("#text19").text = `Welcome, ${name}`;

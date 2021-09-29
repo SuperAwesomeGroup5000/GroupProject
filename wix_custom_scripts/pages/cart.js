@@ -21,7 +21,7 @@ function sumProducts(cartArray, loggedIn) {
 function updateCheckoutButton(balance, grandTotal) {
 
 	// Only run when both variables are initialized
-	if (balance === 0 || grandTotal === 0) return;
+	if (balance === undefined || grandTotal === 0) return;
 
 	// Ensure the user has enough balance
 	if (balance >= grandTotal) {
@@ -63,7 +63,7 @@ $w.onReady(function() {
 	$w("#button4").collapse();
 
 	// Placeholders to store balance and grand total
-	let balance = 0;
+	let balance;
 	let grandTotal = 0;
 
 	// Check whether user is logged in
