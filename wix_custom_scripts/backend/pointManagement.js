@@ -3,7 +3,7 @@
 import wixData from 'wix-data';
 import wixUsersBackend from 'wix-users-backend';
 
-
+// getUserPoints() returns the points of the current user, or inserts if no record exists
 export async function getUserPoints() {
 
 	const id = wixUsersBackend.currentUser.id;
@@ -26,6 +26,8 @@ export async function getUserPoints() {
 	});
 }
 
+// spendPoints(points) subtracts points from the current user's balance if possible
+// Returns true if points were deducted, false if balance was too low
 export async function spendPoints(points) {
 
 	const id = wixUsersBackend.currentUser.id;
@@ -72,6 +74,7 @@ export async function spendPoints(points) {
 	}).catch(console.error);
 }
 
+// givePoints(points) adds points to the current user's balance
 export async function givePoints(points) {
 
 	const id = wixUsersBackend.currentUser.id;

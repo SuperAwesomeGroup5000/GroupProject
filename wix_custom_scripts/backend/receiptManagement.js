@@ -3,6 +3,7 @@
 import wixData from 'wix-data';
 import wixUsersBackend from 'wix-users-backend';
 
+// addReceipt(cartArray) adds receipts to the database based the current user and their cart contents
 export async function addReceipt(cartArray) {
 
 	const id = wixUsersBackend.currentUser.id;
@@ -27,6 +28,7 @@ export async function addReceipt(cartArray) {
 
 }
 
+// getReceipts() returns all receipts stored in the database for the current user
 export async function getReceipts() {
 
 	const id = wixUsersBackend.currentUser.id;

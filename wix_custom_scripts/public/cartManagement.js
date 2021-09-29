@@ -22,6 +22,7 @@
 
 import {local} from 'wix-storage';
 
+// addToCart(productInfo) inserts a product into the current user's cart, or updates the quantity if it already exists
 export function addToCart(productInfo) {
 
 	// Get existing cart if possible
@@ -56,43 +57,44 @@ export function addToCart(productInfo) {
 	setCart(cartArray);
 }
 
-// Sum all item quantities within the cart
-export function sumCartSize(arr) {
+// sumCartSize(cartArray) sums all item quantities within the current user's cart
+export function sumCartSize(cartArray) {
 
 	let cartLength = 0;
-	for (let i = 0; i < arr.length; i++) {
-		cartLength += arr[i].quantity;
+	for (let i = 0; i < cartArray.length; i++) {
+		cartLength += cartArray[i].quantity;
 	}
 
 	return cartLength;
 }
 
-// Get cart size, returning 0 if no cart exists
+// getCartSize() returns number of products in the current user's cart, or 0 if no cart exists
 export function getCartSize() {
 
 	const cart = local.getItem("cart");
 	if (cart) {
 		// Ensure cart is an array and not an object like in the previous version of the code
 		const json = JSON.parse(cart);
-		return Array.isArray(json) ? sumCartSize(json) : 0
+		if (Array.isArray(json)) return sumCartSize(json);
 	}
 
 	return 0;
 }
 
-// Get cart array, returning an empty array if no cart exists
+// getCart() returns the cart array of the current user, or a blank array if no cart exists
 export function getCart() {
 
 	const cart = local.getItem("cart");
 	if (cart) {
 		// Ensure cart is an array and not an object like in the previous version of the code
 		const json = JSON.parse(cart);
-		return Array.isArray(json) ? json : [];
+		if (Array.isArray(json)) return json;
 	}
 
 	return [];
 }
 
+// clearCart() clears the cart array of the current user
 export function clearCart() {
 	
 	// Clear all local storage
@@ -102,8 +104,7 @@ export function clearCart() {
 	$w("#button3").label = "0";
 }
 
-export function setCart(arr) {
-
-	// Update stored cart
-	local.setItem("cart", JSON.stringify(arr));
+// setCart(cartArray) changes the cart of the current user to the provided array
+export function setCart(cartArray) {
+	local.setItem("cart", JSON.stringify(cartArray));
 }
