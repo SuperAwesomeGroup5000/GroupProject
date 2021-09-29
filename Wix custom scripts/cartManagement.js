@@ -7,14 +7,14 @@
 			_id: "Product 1 id",
 			name: "Product 1 name",
 			description: "Product 1 description",
-			... all other properties from storeProducts table
+			... all other attributes from storeProducts table
 			quantity: 4
 		},
 		{
 			_id: "Product 2 id",
 			name: "Product 2 name",
 			description: "Product 2 description",
-			... all other properties from storeProducts table
+			... all other attributes from storeProducts table
 			quantity: 2
 		}
 	]
@@ -56,15 +56,6 @@ export function addToCart(productInfo) {
 
 	// Save the new cart
     setCart(cartArray);
-}
-
-// Grand total depends on whether a user is logged in, since prices change
-export function grandTotal(cartArray, loggedIn) {
-	let total = 0;
-	for (let i = 0; i < cartArray.length; i++) {
-		total += (loggedIn ? cartArray[i].price : cartArray[i].priceDollars) * cartArray[i].quantity;
-	}
-	return total;
 }
 
 // Sum of all item quantities within the cart
