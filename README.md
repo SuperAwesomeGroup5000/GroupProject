@@ -8,7 +8,7 @@ So all features can be tested, you are granted 500 points by registering an acco
 ## Group Members
 |Student|Email|Role|
 |:---|:--|:---|
-|Kaleb Dodds-Pratt|kcdp942@uowmail.edu.au|Presenter / Analyst|
+|Kaleb Dodds-Pratt|kcdp942@uowmail.edu.au|Backend Programmer / Analyst|
 |Hallam Roberts|hrr052@uowmail.edu.au|Analyst|
 |Samuel Murrandah|sjrm898@uowmail.edu.au|Programmer|
 |Daniel Dimatulac|dd985@uowmail.edu.au|Analyst|
