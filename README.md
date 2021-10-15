@@ -1,7 +1,9 @@
 # CSIT214 Project: Group 2
 This repository contains the prototype and documents for our group project.
 
-Our website can be accessed [here](https://brandontehzy.wixsite.com/website).
+[Our website can be accessed here](https://brandontehzy.wixsite.com/website).
+
+So all features can be tested, you are granted 500 points by registering an account. This is for demonstration purposes only.
 
 ## Group Members
 |Student|Email|Role|
