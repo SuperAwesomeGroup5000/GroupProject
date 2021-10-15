@@ -8,12 +8,12 @@ So all features can be tested, you are granted 500 points by registering an acco
 ## Group Members
 |Student|Email|Role|
 |:---|:--|:---|
-|Kaleb Dodds-Pratt|kcdp942@uowmail.edu.au|Backend Programmer / Analyst|
-|Hallam Roberts|hrr052@uowmail.edu.au|Analyst|
-|Samuel Murrandah|sjrm898@uowmail.edu.au|Programmer|
+|Kaleb Dodds-Pratt|kcdp942@uowmail.edu.au|Project Manager|
+|Carl Durkin|crd017@uowmail.edu.au|Analyst|
+|Hallam Roberts|hrr052@uowmail.edu.au|Backend Developer / Analyst|
+|Brandon Teh|bzyt637@uowmail.edu.au|Frontend Developer / Analyst|
+|Samuel Murrandah|sjrm898@uowmail.edu.au|Developer|
 |Daniel Dimatulac|dd985@uowmail.edu.au|Analyst|
-|Carl Durkin|crd017@uowmail.edu.au|Coordinator|
-|Brandon Teh|bzyt637@uowmail.edu.au|Analyst|
 
 ## Project Choice
 Our group chose project 2:
