@@ -3,7 +3,7 @@ This repository contains the prototype and documents for our group project.
 
 [Our website can be accessed here](https://brandontehzy.wixsite.com/website).
 
-So all features can be tested, you are granted 500 points by registering an account. This is for demonstration purposes only.
+So all features can be tested, you are granted 500 points by registering an account. This is for demonstration only.
 
 ## Group Members
 |Student|Email|Role|
