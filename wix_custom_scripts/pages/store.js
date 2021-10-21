@@ -64,7 +64,7 @@ function setupPage(user) {
 
 		// Ask user to log in
 		$w("#text14").text = "Price:";
-		$w("#text19").text = "To purchase items with Dream Points, please log in at the top right.";
+		$w("#text19").text = "To purchase items with Dream Points, please login or register at the top right.";
 	}
 
 }
@@ -84,9 +84,11 @@ $w.onReady(function() {
 			$item("#button1").enable();
 			$item("#button1").onClick(() => {
 				addToCart(data);
+				showPopup();
 			});
 		}
 	});
+
 
 	// Setup page normally
 	setupPage(wixUsers.currentUser);
@@ -102,3 +104,31 @@ $w.onReady(function() {
 		setupPage(e);
 	});
 });
+
+let timeout;
+
+function showPopup() {
+
+	//wixWindow.openLightbox("CartConfirm");
+
+	// Clear previous timer
+	if (timeout) {
+		clearTimeout(timeout);
+		timeout = undefined;
+	}
+
+	// Make popup visible
+	const popup = $w("#button4");
+	popup.show("slide", {
+		"duration": 500,
+		"direction": "right"
+	});
+
+	// Hide after 2 seconds
+	timeout = setTimeout(() => {
+		popup.hide("slide", {
+			"duration": 500,
+			"direction": "right"
+		});
+	}, 2000);
+}

@@ -16,12 +16,12 @@ export async function getUserPoints() {
 			// Return existing points
 			return result.items[0].points;
 		} else {
-			// Insert points into database
+			// Insert points into database (500 for demo only)
 			wixData.insert("userPoints", {
 				"title": id.toString(),
-				"points": 0
+				"points": 500
 			});
-			return 0;
+			return 500;
 		}
 	});
 }
@@ -54,16 +54,16 @@ export async function spendPoints(points) {
 
 		} else {
 
-			// Insert new user
+			// Insert new user (500 points for demo only)
 			wixData.insert("userPoints", {
 				"title": id.toString(),
-				"points": 0
+				"points": 500
 			}).catch(console.error);
 
 			console.log(`Added user ${id} to points database.`);
 			
-			if (points <= 0) {
-				// This item is free, so the user can purchase it
+			if (points <= 500) {
+				// The user can purchase this item
 				return true;
 			} else {
 				console.error(`${id} does not have sufficient funds to complete the purchase!`);
@@ -74,10 +74,8 @@ export async function spendPoints(points) {
 	}).catch(console.error);
 }
 
-// givePoints(points) adds points to the current user's balance
-export async function givePoints(points) {
-
-	const id = wixUsersBackend.currentUser.id;
+// givePoints(points) adds points to a user's balance by ID
+export async function givePointsId(id, points) {
 
 	return wixData.query("userPoints") // Get the current user
 	.eq("title", id)
@@ -105,4 +103,9 @@ export async function givePoints(points) {
 		}
 		
 	}).catch(console.error);
+}
+
+// givePoints(points) adds points to the current user's balance
+export async function givePoints(points) {
+	return givePointsId(wixUsersBackend.currentUser.id);
 }

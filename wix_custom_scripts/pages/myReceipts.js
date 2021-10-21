@@ -8,7 +8,10 @@ function updateTotalSpent(items) {
 	// Sum all items together
 	let totalSpent = 0;
 	for (let i = 0; i < items.length; i++) {
-		totalSpent += items[i].totalPrice;
+		// Only consider non-refunded products
+		if (!items[i].refunded) {
+			totalSpent += items[i].totalPrice;
+		}
 	}
 
 	// Update label
@@ -25,6 +28,12 @@ $w.onReady(function () {
 
 	$w("#repeater1").onItemReady(($item, data) => {
 
+		// Display differently when refunded
+		if (data.refunded) {
+			$item("#text33").text = "Refunded";
+			$item("#vectorImage1").expand();
+		}
+
 		// Set product title
 		$item("#text25").text = `${data.productName} x${data.quantity}`;
 
@@ -33,7 +42,7 @@ $w.onReady(function () {
 		$item("#image1").alt = data.productName;
 
 		// Set order ID
-		$item("#text31").text = data._id;
+		$item("#text31").text = data.refunded ? "Order refunded!" : data._id;
 
 		// Set order date
 		$item("#text38").text = new Intl.DateTimeFormat("en", {
