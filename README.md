@@ -8,7 +8,6 @@ So all features can be tested, you are granted 500 points by registering an acco
 ## Group Members
 |Student|Email|Role|
 |:---|:--|:---|
-|Kaleb Dodds-Pratt|kcdp942@uowmail.edu.au|Project Manager|
 |Carl Durkin|crd017@uowmail.edu.au|Analyst|
 |Hallam Roberts|hrr052@uowmail.edu.au|Backend Developer / Analyst|
 |Brandon Teh|bzyt637@uowmail.edu.au|Frontend Developer / Analyst|
